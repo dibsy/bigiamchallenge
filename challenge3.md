@@ -26,3 +26,18 @@
     ]
 }
 ```
+## Solution
+
+- At the time of solving & writing the solution I found this challenge is kind of broken as our endpoint could not recieve the SNS confirmation message in our webhook
+
+```bash
+ aws sns subscribe \
+    --topic-arn arn:aws:sns:us-east-1:092297851374:TBICWizPushNotifications \
+    --protocol https \
+    --notification-endpoint https://webhook.site/e81ba3c4-f37e-4bb6-9041-bf194f97550b/@tbic.wiz.io
+```
+```json
+{
+    "SubscriptionArn": "pending confirmation"
+}
+```
