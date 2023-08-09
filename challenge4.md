@@ -39,7 +39,7 @@
 - The GetObject has an open access, howerver the ListBucket is conditional based on ARN.
 - Using --no-sign-request we send an request without an ARN of the current user ( my assunption ). Hence PrincipalArn will not be in the key of the request.
 
-### Method1
+### Method 1
 
 
 ``` bash
@@ -55,7 +55,7 @@ An error occurred (AccessDenied) when calling the ListObjectsV2 operation: Acces
 {wiz:principal-arn-is-not-xxxxxxxxxxxx}
 ```
 
-### Method2 ( Reference : https://iash.dev/posts/the-big-iam-challenge-ctf-walkthrough/ )
+### Method 2 ( Reference : https://iash.dev/posts/the-big-iam-challenge-ctf-walkthrough/ )
 1. Create a curl request for the directory listing
 ```bash
 curl "https://s3.amazonaws.com/thebigiamchallenge-admin-storage-abf1321?prefix=files/"
