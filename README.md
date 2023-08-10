@@ -1,3 +1,3 @@
 # bigiamchallenge
-Wiz BigIAMChallenge Walkthrough ( https://bigiamchallenge.com/ )
+Wiz BigIAMChallenge CTF Walkthrough ( https://bigiamchallenge.com/ )
  
