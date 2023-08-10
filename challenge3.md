@@ -41,3 +41,6 @@
     "SubscriptionArn": "pending confirmation"
 }
 ```
+## Note
+
+I could not solve the full challenge as I believe the part of the challenge is broken. I read some oneline writeup and verified my process is correct but the request is not triggered. To move on to the next part of the challenge I used a flag to skip this challenge and move to the next.
